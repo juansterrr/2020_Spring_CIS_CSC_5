@@ -2,11 +2,13 @@
  * File:   main.cpp
  * Author: Dr. Mark E. Lehr
  * Created on March 19th, 2020, 11:40 AM
- * Purpose: Template
+ * Purpose: Grade using Ternary Operator
  */
 
 //System Level Libraries
 #include <iostream>   //I/O Library
+#include <cstdlib>    //Random Function
+#include <ctime>      //Time to set seed
 using namespace std;  //Libraries compiled under std
 
 //User Level Libraries
@@ -18,17 +20,25 @@ using namespace std;  //Libraries compiled under std
 
 //Execution Begins Here!
 int main(int argc, char** argv) {
-    //Random Number Seed Set Here
+    //Set the random number seed
+    srand(static_cast<unsigned int>(time(0)));
     
     //Variable Declarations
+    char grade;  //Grade A,B,C,D, OR F
+    unsigned char score;  //Numeric value from 0 to 100
     
     //Variable Initialization
+    score=rand()%51+50;//Score inclusive range[50,100]
     
     //Mapping Process Inputs to Outputs
+    grade=(score<60)?'F':
+          (score<70)?'D':
+          (score<80)?'C':
+          (score<90)?'B':'A';
     
     //Display Outputs
-
-    //Clean Up
+    cout<<"A score of "<<static_cast<int>(score)
+            <<" is a "<<grade<<" grade!"<<endl;
     
     //Exit stage right!
     return 0;
