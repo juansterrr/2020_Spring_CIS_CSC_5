@@ -3,7 +3,6 @@
  * Author: Dr. Mark E. Lehr
  * Created on April 7th, 2020, 10:07 AM
  * Purpose:  How to solve the penny problem
- *           Note:  Using the shift operator to double
  */
 
 //System Level Libraries
@@ -34,7 +33,7 @@ int main(int argc, char** argv){
     
     //Map inputs to outputs -> i.e. process the inputs
     for(int day=2;day<=nDays;day++){
-        payDay<<=1;//Shift operator, doubles for each shift
+        payDay*=2;
         payChk+=payDay;
     }
     
